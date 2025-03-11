@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: Arial, 'Helvetica', sans-serif;
+            height: auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            /* Ensures icons move to the right */
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #090101;
+            width: 100%;
+        }
+
+        .nav-menu ul {
+            display: flex;
+            justify-content: flex-start;
+            list-style: none;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .icons {
+            display: flex;
+            gap: 40px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #f7f1f1;
+            margin-left: auto;
+            margin-right: 200px;
+
+        }
+
+        header .logo {
+            display: flex;
+            width: auto;
+            margin-left: 120px;
+        }
+
+        div img {
+            width: 100%;
+            height: auto;
+        }
+
+        main nav {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            height: 100%;
+            padding: 0;
+            margin-top: 50px;
+            justify-content: center;
+        }
+
+
+        nav li {
+            list-style: none;
+        }
+
+        .bx {
+            font-size: 1.2rem;
+
+        }
+
+        li form {
+            width: 100%;
+            position: relative;
+            display: inline-block;
+        }
+
+        li input {
+            width: 350px;
+            height: 35px;
+            background: #f7f7f7;
+            border-radius: 10px;
+            padding: 10px 10px 10px 35px;
+
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 25px;
+            color: #111010;
+            cursor: pointer;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+
+        .nav-menu ul {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            color: aliceblue;
+        }
+
+        .nav-menu li {
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .nav-menu {
+            overflow: visible;
+        }
+
+        .nav-menu li span {
+            display: flex;
+            align-items: center;
+        }
+
+
+        .menu-toggle {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+
+        .secondary-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .secondary-nav ul {
+            display: flex;
+            gap: 50px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .secondary-nav li {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        li form {
+            width: 100%;
+            position: relative;
+            display: inline-block;
+        }
+
+        li input {
+            width: 350px;
+            height: 35px;
+            background: #f7f7f7;
+            border-radius: 10px;
+            padding: 10px 10px 10px 35px;
+            border: none;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 25px;
+            color: #111010;
+            cursor: pointer;
+        }
+
+        .advertise-phone {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 40px auto;
+            max-width: 1000px;
+        }
+
+        .advertise-phone img {
+            width: 50%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 1024px) {
+            section .nav-menu ul {
+                gap: 30px;
+            }
+
+            .logo {
+                margin: 0;
+            }
+
+            header {
+                display: flex;
+                justify-content: space-between;
+
+            }
+
+            header li:nth-child(1),
+            header li:nth-child(2),
+            header li:nth-child(3),
+            header li:nth-child(4),
+            header li:nth-child(5),
+            header li:nth-child(6) {
+                display: none;
+            }
+
+            .bx {
+
+                margin-right: 20px;
+            }
+
+            .secondary-nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .secondary-nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .secondary-nav li:nth-child(1),
+            .secondary-nav li:nth-child(2) {
+                display: none;
+            }
+
+            .advertise-phone {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .advertise-phone img {
+                width: 30%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+                font-size: 1.8rem;
+                cursor: pointer;
+            }
+
+            .logo {
+                margin-left: 10px;
+            }
+
+            .icons {
+                display: none;
+
+            }
+
+            header {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .advertise-phone img {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .advertise-phone img {
+                width: 100%;
+            }
+
+            header {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .secondary-nav ul {
+                gap: 15px;
+            }
+
+            li input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="./assets/logo.png" alt="Logo">
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li>|</li>
+                <li>Home</li>
+                <li>Discover</li>
+                <li>Blog</li>
+                <li>About Us</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <i class='bx bx-cart'></i>
+            <i class='bx bx-user'></i>
+        </div>
+        <div class="menu-toggle">
+            <i class="bx bx-menu"></i>
+        </div>
+    </header>
+    <main>
+        <nav class="secondary-nav">
+            <ul>
+                <li><i class='bx bx-target-lock'></i> Sogod, Southern Leyte, Philippines</li>
+                <li><i class='bx bxs-discount'></i> Best deals</li>
+                <li>
+                    <form action="/search" method="get">
+                        <input type="text" name="query" placeholder="Search..." required>
+                        <i class='bx bx-search search-icon'></i>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="advertise-phone">
+            <img src="./assets/Asus ROG Phone 3.jpg" alt="Asus ROG Phone 3">
+            <div>
+                <h1>Asus ROG Phone 3</h1>
+                <p>Snapdragon 865+, 144hz AMOLED Display, <br> 6000mAh battery, Air Triggers</p>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
