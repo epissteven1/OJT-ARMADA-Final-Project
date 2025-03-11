@@ -11,36 +11,42 @@
 
 <body>
     <header>
-        <div>
+        <div class="logo">
             <img src="./assets/logo.png" alt="Logo">
         </div>
-        <ul>
-            <li>
-                |
-            </li>
-            <li>Home</li>
-            <li>Discover</li>
-            <li>Blog</li>
-            <li>About Us</li>
-            <li>Contact</li>
-            <li <i class='bx bx-cart'></i></li>
-            <li <i class='bx bx-user'></i></li>
-        </ul>
-
+        <nav class="nav-menu">
+            <ul>
+                <li>|</li>
+                <li>Home</li>
+                <li>Discover</li>
+                <li>Blog</li>
+                <li>About Us</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <i class='bx bx-cart'></i>
+            <i class='bx bx-user'></i>
+        </div>
+        <div class="menu-toggle">
+            <i class="bx bx-menu"></i>
+        </div>
     </header>
     <main>
-        <nav>
-            <li <i class='bx bx-target-lock'>Sogod, Southern Leyte, Philippines</li>
-            <li <i class='bx bxs-discount'></i>Best deals</li>
-            <li>
-                <form action="/search" method="get">
-                    <input type="text" name="query" placeholder="Search..." required>
-                    <i class='bx bx-search search-icon'></i>
-                </form>
-            </li>
+        <nav class="secondary-nav">
+            <ul>
+                <li><i class='bx bx-target-lock'></i> Sogod, Southern Leyte, Philippines</li>
+                <li><i class='bx bxs-discount'></i> Best deals</li>
+                <li>
+                    <form action="/search" method="get">
+                        <input type="text" name="query" placeholder="Search..." required>
+                        <i class='bx bx-search search-icon'></i>
+                    </form>
+                </li>
+            </ul>
         </nav>
-        <section class="advertise-phone">
 
+        <section class="advertise-phone">
             <img src="./assets/Asus ROG Phone 3.jpg" alt="Asus ROG Phone 3">
             <div>
                 <h1>Asus ROG Phone 3</h1>
