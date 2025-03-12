@@ -1,0 +1,550 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, 'Helvetica', sans-serif;
+    box-sizing: border-box;
+}
+
+.introduction {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center; 
+    padding: 10px; 
+    background: #000;
+    color: #fff;
+}
+
+.introduction .text {
+    max-width: 60%; 
+}
+
+.introduction h1 {
+    font-size: 48px; 
+    margin-bottom: 10px;
+}
+
+.introduction h6 {
+    font-size: 20px; 
+    margin-bottom: 20px;
+}
+
+.icon {
+    margin: 20px 0;
+    width: 30%;
+}
+
+.button-shop {
+    display: inline-block;
+    padding: 5px 30px;
+    font-size: 16px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 15px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.gradient {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+    height: 100vh; 
+    background: linear-gradient(to bottom right, #4C7AB6, #C88AAB);
+    color: black;
+    text-align: left; 
+}
+
+.asus-phone {
+    width: 500px;
+    margin-right: 20px; 
+    border-radius: 8px; 
+}
+
+.text-container {
+    margin-left: 30px;
+}
+
+.gradient h3 {
+    font-size: 3rem;
+    margin: 0; 
+}
+
+.gradient h6 {
+    font-size: 1rem; 
+    margin: 5px 0;
+}
+
+.gradient .text-container {
+    display: flex;
+    flex-direction: column; 
+}
+
+.popular-products , .feature {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.popular-products {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.popular-products h2 {
+    margin-bottom: 70px;
+    font-size: 2rem;
+}
+
+.product-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    list-style: none; 
+    padding: 0; 
+}
+
+.product-cards li {
+    background: white;
+    border: 1px solid gray;
+    border-radius: 20px;
+    width: 350px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-cards img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.product-info {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin: 10px 0; 
+}
+
+.product-cards h3 {
+    font-size: 16px;
+    color: black; 
+    width: 200px;
+    margin-left: 20px;
+}
+
+.product-cards p {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    color: black;
+    border: 1px solid black;
+    width: 100px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.product-cards a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    width: 150px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.feature {
+    text-align: center;
+    margin: 40px 0;
+    margin-top: 60px;
+}
+
+.feature h2,
+.feature h3 {
+    margin-bottom: 20px; 
+}
+
+.feature h2 {
+    font-size: 1.5rem;
+}
+
+.feature h3 {
+    font-size: 2rem;
+}
+
+.feature ul {
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+    list-style: none; 
+    padding: 0; 
+    width: 70%;
+}
+
+.feature ul li {
+    text-align: center;
+    border-radius: 10px; 
+    padding: 30px; 
+    margin-bottom: 30px;
+}
+
+.feature ul img {
+    width: 50px; 
+    height: 50px; 
+}
+
+.feature h4 {
+    margin-top: 5px;
+    font-size: 18px;
+    color: #394e60; 
+}
+
+.feature p {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #394e60; 
+    text-align: left;
+}
+
+.feature img {
+    width: 100%;
+}
+
+css
+
+Copy
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, 'Helvetica', sans-serif;
+    box-sizing: border-box;
+}
+
+.introduction {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center; 
+    padding: 10px; 
+    background: #000;
+    color: #fff;
+}
+
+.introduction .text {
+    max-width: 60%; 
+}
+
+.introduction h1 {
+    font-size: 48px; 
+    margin-bottom: 10px;
+}
+
+.introduction h6 {
+    font-size: 20px; 
+    margin-bottom: 20px;
+}
+
+.icon {
+    margin: 20px 0;
+    width: 30%;
+}
+
+.button-shop {
+    display: inline-block;
+    padding: 5px 30px;
+    font-size: 16px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 15px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.gradient {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+    height: 100vh; 
+    background: linear-gradient(to bottom right, #4C7AB6, #C88AAB);
+    color: black;
+    text-align: left; 
+}
+
+.asus-phone {
+    width: 500px;
+    margin-right: 20px; 
+    border-radius: 8px; 
+}
+
+.text-container {
+    margin-left: 30px;
+}
+
+.gradient h3 {
+    font-size: 3rem;
+    margin: 0; 
+}
+
+.gradient h6 {
+    font-size: 1rem; 
+    margin: 5px 0;
+}
+
+.gradient .text-container {
+    display: flex;
+    flex-direction: column; 
+}
+
+.popular-products, .feature {
+    width: 100%;
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.popular-products h2 {
+    margin-bottom: 70px;
+    font-size: 2rem;
+}
+
+.product-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    list-style: none; 
+    padding: 0; 
+    flex-wrap: wrap; 
+}
+
+.product-cards li {
+    background: white;
+    border: 1px solid gray;
+    border-radius: 20px;
+    width: 350px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-cards img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.product-info {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin: 10px 0; 
+}
+
+.product-cards h3 {
+    font-size: 16px;
+    color: black; 
+    width: 200px;
+    margin-left: 20px;
+}
+
+.product-cards p {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    color: black;
+    border: 1px solid black;
+    width: 100px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 20px;
+}
+
+.product-cards a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    text-decoration: none;
+    width: 150px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.feature {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.feature h2,
+.feature h3 {
+    margin-bottom: 20px; 
+}
+
+.feature h2 {
+    font-size: 1.5rem;
+}
+
+.feature h3 {
+    font-size: 2rem;
+}
+
+.feature ul {
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+    list-style: none; 
+    padding: 0; 
+    width: 70%;
+}
+
+.feature ul li {
+    text-align: center;
+    border-radius: 10px; 
+    padding: 30px; 
+    margin-bottom: 30px;
+}
+
+.feature ul img {
+    width: 50px; 
+    height: 50px; 
+}
+
+.feature h4 {
+    margin-top: 5px;
+    font-size: 18px;
+    color: #394e60; 
+}
+
+.feature p {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #394e60; 
+    text-align: left;
+}
+
+.feature img {
+    width: 100%;
+}
+
+/*Responsiveness */
+@media (max-width: 1200px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .gradient h3 {
+        font-size: 2.5rem; 
+    }
+
+    .introduction h1 {
+        font-size: 36px; 
+    }
+
+    .introduction h6 {
+        font-size: 18px; 
+    }
+
+    .product-cards li {
+        width: 300px;
+    }
+
+    .feature ul {
+        width: 90%; 
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .gradient h3 {
+        font-size: 2rem; 
+    }
+
+    .product-cards li {
+        width: 100%; 
+    }
+    
+    .feature ul {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .introduction {
+        flex-direction: column; 
+        height: auto; 
+    }
+
+    .introduction .text {
+        max-width: 100%; 
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        overflow-x: hidden; 
+    }
+
+    .introduction,
+    .gradient {
+        width: 100%; 
+        padding: 10px; 
+        box-sizing: border-box;
+    }
+
+    .gradient h3 {
+        font-size: 1.5rem; 
+        text-align: center; 
+    }
+
+    .introduction h1 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .introduction h6 {
+        font-size: 14px; 
+        text-align: center; 
+    }
+
+    .feature ul {
+        grid-template-columns: 1fr; 
+        padding: 0 10px; 
+    }
+
+    .feature ul li {
+        padding: 20px; 
+        margin-bottom: 20px; 
+    }
+
+    .product-cards {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .product-cards li {
+        width: 90%; 
+        margin: 10px 0; 
+    }
+}
