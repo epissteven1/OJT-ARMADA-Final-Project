@@ -4,8 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logo">
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li>|</li>
+                <li>Home</li>
+                <li>Discover</li>
+                <li>Blog</li>
+                <li>About Us</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <i class='bx bx-cart'></i>
+            <i class='bx bx-user'></i>
+        </div>
+        <div class="menu-toggle">
+            <i class="bx bx-menu"></i>
+        </div>
+    </header>
+    
+    <main>
+        <section class="cart-container">
+            <h1 class="cart-title">Cart<span class="cart-count">1</span></h1>
+
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th class="item">Item</th>
+                        <th class="price">Price</th>
+                        <th class="quantity">Quantity</th>
+                        <th class="total-price">Total Price</th>
+                        <th class="actions">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="cart-item">
+                        <td class="item-info">
+                            <img src="assets/first-pic.png" alt="ZTE Nubia Red Magic 9 Pro">
+                            <div>
+                                <strong>ZTE Nubia Red Magic 9 Pro</strong>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </td>
+                        <td>₱24,000.00</td>
+                        <td>
+                            <div class="quantity-control">
+                                <button class="decrease">−</button>
+                                <span>1</span>
+                                <button class="increase">+</button>
+                            </div>
+                        </td>
+                        <td>₱24,000.00</td>
+                        <td class="actions">
+                            <button class="wishlist">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                            <button class="remove">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="cart-summary">
+                <div class="promo-section">
+                    <label for="promo-code">Promocode</label>
+                    <input type="text" id="promo-code" value="HAPPY">
+                    <p class="promo-message">Congrats! You have 10% discount</p>
+                    <p>Discount: <span>₱800</span></p>
+                </div>
+
+                <div class="cart-actions">
+                    <a href="#" class="back-shopping">← Back to shopping</a>
+                        <div class="summary-details">
+                            <p>Total Price: <span class="total-price">₱24,000.00</span></p>
+                            <button class="checkout">Check out</button>
+                        </div>
+                </div>
+            </div>
+        </section>
+    </main>
     
 </body>
 </html>
