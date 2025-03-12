@@ -25,7 +25,9 @@
             </ul>
         </nav>
         <div class="icons">
-            <i class='bx bx-cart'></i>
+            <i class='bx bx-cart' id="cart-icon">
+                <span id="cart-count">0</span>
+            </i>
             <i class='bx bx-user'></i>
         </div>
         <div class="menu-toggle">
@@ -38,8 +40,8 @@
                 <li><i class='bx bx-target-lock'></i> Sogod, Southern Leyte, Philippines</li>
                 <li><i class='bx bxs-discount'></i> Best deals</li>
                 <li>
-                    <form action="/search" method="get">
-                        <input type="text" name="query" placeholder="Search..." required>
+                    <form action="" method="">
+                        <input type="text" id="searchBar" placeholder="Search...">
                         <i class='bx bx-search search-icon'></i>
                     </form>
                 </li>
@@ -47,18 +49,18 @@
         </nav>
 
         <section class="advertise-phone">
-            <img src="./assets/Asus ROG Phone 3.jpg" alt="Asus ROG Phone 3">
-            <div>
-                <h1>Asus ROG Phone 3</h1>
-                <p>Snapdragon 865+, 144hz AMOLED Display, <br> 6000mAh battery, Air Triggers</p>
-            </div>
+            <video autoplay loop muted playsinline class="advertise-video">
+                <source src="./assets/videos/30s Ad for ROG Phone 3 .mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </section>
 
         <section class="recommeded-gamimg-phone">
             <h1>Recommeded</h1>
-            <ul>
+            <ul id="list">
                 <li>
-                    <img src="./assets/zte-nubia-red-magic-9-pro.jpg" alt="zte-nubia-red-magic-9-pro">
+                    <img class="product-image" src="./assets/zte-nubia-red-magic-9-pro.jpg"
+                        alt="zte-nubia-red-magic-9-pro">
                     <h1>ZTE nubia Red Magic 9 Pro</h1>
                     <span class="price">₱ 24,000.00</span>
                     <button class="cart-btn"><i class='bx bx-cart'></i> Add to Cart</button>
@@ -72,7 +74,8 @@
                     </div>
                 </li>
                 <li>
-                    <img src="./assets/Asus ROG Phone 7 Ultimate.jpg" alt="Asu ROG Phone 7 Ultimate">
+                    <img class="product-image" src="./assets/Asus ROG Phone 7 Ultimate.jpg"
+                        alt="Asu ROG Phone 7 Ultimate">
                     <h1>Asu ROG Phone 7 Ultimate</h1>
                     <span class="price">₱ 20,499.00</span>
                     <button class="cart-btn"><i class='bx bx-cart'></i> Add to Cart</button>
@@ -86,7 +89,8 @@
                     </div>
                 </li>
                 <li>
-                    <img src="./assets/Samsung Galaxy S24 Ultra.jpg" alt="Samsung Galaxy S24 Ultra">
+                    <img class="product-image" src="./assets/Samsung Galaxy S24 Ultra.jpg"
+                        alt="Samsung Galaxy S24 Ultra">
                     <h1>Samsung Galaxy S24 Ultra</h1>
                     <span class="price">₱ 30,999.00</span>
                     <button class="cart-btn"><i class='bx bx-cart'></i> Add to Cart</button>
@@ -100,7 +104,7 @@
                     </div>
                 </li>
                 <li>
-                    <img src="./assets/Xiaomi POCO F4 GT.jpg" alt="Xiaomi POCO F4 GT">
+                    <img class="product-image" src="./assets/Xiaomi POCO F4 GT.jpg" alt="Xiaomi POCO F4 GT">
                     <h1>Xiaomi POCO F4 GT</h1>
                     <span class="price">₱ 21,499.00</span>
                     <button class="cart-btn"><i class='bx bx-cart'></i> Add to Cart</button>
@@ -117,11 +121,11 @@
         </section>
         <section class="best-seller-gamimg-phone">
             <h1>Best Seller</h1>
-            <ul>
+            <ul id="list">
                 <li>
-                    <img src="./assets/Infinix Note 30 Pro 8.jpg" alt="Infinix Note 30 Pro 8">
+                    <img class="product-image" src="./assets/Infinix Note 30 Pro 8.jpg" alt="Infinix Note 30 Pro 8">
                     <h1>Infinix Note 30 Pro 8</h1>
-                    <span class="price">₱9.599.00</span>
+                    <span class="price">₱9,599.00</span>
                     <button class="cart-btn"><i class='bx bx-cart'></i> Add to Cart</button>
                     <div class="rating">
                         <i class='bx bx-star'></i>
@@ -133,9 +137,9 @@
                     </div>
                 </li>
                 <li>
-                    <img src="./assets/Lenovo Legion Y70.jpg" alt="Lenovo Legion Y70">
+                    <img class="product-image" src="./assets/Lenovo Legion Y70.jpg" alt="Lenovo Legion Y70">
                     <h1>Lenovo Legion Y70</h1>
-                    <span class="price">₱10.599.00</span>
+                    <span class="price">₱10,599.00</span>
                     <button class="cart-btn"><i class='bx bx-cart'></i> Add to Cart</button>
                     <div class="rating">
                         <i class='bx bx-star'></i>
@@ -147,9 +151,9 @@
                     </div>
                 </li>
                 <li>
-                    <img src="./assets//Tecno Spark 10 Pro.jpg" alt="Tecno Spark 10 Pro">
+                    <img class="product-image" src="./assets//Tecno Spark 10 Pro.jpg" alt="Tecno Spark 10 Pro">
                     <h1>Tecno Spark 10 Pro</h1>
-                    <span class="price">₱13.000.00</span>
+                    <span class="price">₱13,000.00</span>
                     <button class="cart-btn"><i class='bx bx-cart'></i> Add to Cart</button>
                     <div class="rating">
                         <i class='bx bx-star'></i>
@@ -161,9 +165,9 @@
                     </div>
                 </li>
                 <li>
-                    <img src="./assets/Black Shark 5 Pro 8.jpg" alt="Black Shark 5 Pro 8">
+                    <img class="product-image" src="./assets/Black Shark 5 Pro 8.jpg" alt="Black Shark 5 Pro 8">
                     <h1>Black Shark 5 Pro 8</h1>
-                    <span class="price">₱15.599.00</span>
+                    <span class="price">₱15,599.00</span>
                     <button class="cart-btn"><i class='bx bx-cart'></i> Add to Cart</button>
                     <div class="rating">
                         <i class='bx bx-star'></i>
@@ -178,11 +182,11 @@
         </section>
         <section class="all-products">
             <h1>All Products</h1>
-            <ul>
+            <ul id="list">
                 <li>
-                    <img src="./assets/Xiaomi Poco X5 Pro.jpg" alt="Xiaomi Poco X5 Pro">
+                    <img class="product-image" src="./assets/Xiaomi Poco X5 Pro.jpg" alt="Xiaomi Poco X5 Pro">
                     <h1>Xiaomi Poco X5 Pro"</h1>
-                    <span class="price">₱16.000.00</span>
+                    <span class="price">₱16,000.00</span>
                     <button class="cart-btn"><i class='bx bx-cart'></i> Add to Cart</button>
                     <div class="rating">
                         <i class='bx bx-star'></i>
@@ -194,9 +198,9 @@
                     </div>
                 </li>
                 <li>
-                    <img src="./assets/Black Shark 5 Pro 8.jpg" alt="Black Shark 5 Pro 8">
+                    <img class="product-image" src="./assets/Black Shark 5 Pro 8.jpg" alt="Black Shark 5 Pro 8">
                     <h1>Black Shark 5 Pro 8</h1>
-                    <span class="price">₱15.599.00</span>
+                    <span class="price">₱15,599.00</span>
                     <button class="cart-btn"><i class='bx bx-cart'></i> Add to Cart</button>
                     <div class="rating">
                         <i class='bx bx-star'></i>
@@ -208,9 +212,9 @@
                     </div>
                 </li>
                 <li>
-                    <img src="./assets/Infinix Note 30 Pro 8.jpg" alt="Infinix Note 30 Pro 8">
+                    <img class="product-image" src="./assets/Infinix Note 30 Pro 8.jpg" alt="Infinix Note 30 Pro 8">
                     <h1>Infinix Note 30 Pro 8</h1>
-                    <span class="price">₱9.599.00</span>
+                    <span class="price">₱9,599.00</span>
                     <button class="cart-btn"><i class='bx bx-cart'></i> Add to Cart</button>
                     <div class="rating">
                         <i class='bx bx-star'></i>
@@ -222,9 +226,9 @@
                     </div>
                 </li>
                 <li>
-                    <img src="./assets//Tecno Spark 10 Pro.jpg" alt="Tecno Spark 10 Pro">
+                    <img class="product-image" src="./assets//Tecno Spark 10 Pro.jpg" alt="Tecno Spark 10 Pro">
                     <h1>Tecno Spark 10 Pro</h1>
-                    <span class="price">₱13.000.00</span>
+                    <span class="price">₱13,000.00</span>
                     <button class="cart-btn"><i class='bx bx-cart'></i> Add to Cart</button>
                     <div class="rating">
                         <i class='bx bx-star'></i>
@@ -236,7 +240,8 @@
                     </div>
                 </li>
                 <li>
-                    <img src="./assets/Asus ROG Phone 7 Ultimate.jpg" alt="Asu ROG Phone 7 Ultimate">
+                    <img class="product-image" src="./assets/Asus ROG Phone 7 Ultimate.jpg"
+                        alt="Asu ROG Phone 7 Ultimate">
                     <h1>Asu ROG Phone 7 Ultimate</h1>
                     <span class="price">₱ 20,499.00</span>
                     <button class="cart-btn"><i class='bx bx-cart'></i> Add to Cart</button>
@@ -250,9 +255,9 @@
                     </div>
                 </li>
                 <li>
-                    <img src="./assets/Nubia Red Magic 8 Pro.jpg" alt="Nubia Red Magic 8 Pro">
+                    <img class="product-image" src="./assets/Nubia Red Magic 8 Pro.jpg" alt="Nubia Red Magic 8 Pro">
                     <h1>Nubia Red Magic 8 Pro</h1>
-                    <span class="price">₱13.000.00</span>
+                    <span class="price">₱13,000.00</span>
                     <button class="cart-btn"><i class='bx bx-cart'></i> Add to Cart</button>
                     <div class="rating">
                         <i class='bx bx-star'></i>
@@ -264,9 +269,9 @@
                     </div>
                 </li>
                 <li>
-                    <img src="./assets/redmagic.jpg" alt="Nubia Red Magic 7S Pro">
+                    <img class="product-image" src="./assets/redmagic.jpg" alt="Nubia Red Magic 7S Pro">
                     <h1>Nubia Red Magic 7S Pro</h1>
-                    <span class="price">₱10.000.00</span>
+                    <span class="price">₱10,000.00</span>
                     <button class="cart-btn"><i class='bx bx-cart'></i> Add to Cart</button>
                     <div class="rating">
                         <i class='bx bx-star'></i>
@@ -278,9 +283,9 @@
                     </div>
                 </li>
                 <li>
-                    <img src="./assets/Nubia Red Magis 7s.jpg" alt="Nubia Red Magis 7s">
+                    <img class="product-image" src="./assets/Nubia Red Magis 7s.jpg" alt="Nubia Red Magis 7s">
                     <h1>Nubia Red Magis 7s</h1>
-                    <span class="price">₱9.599.00</span>
+                    <span class="price">₱9,599.00</span>
                     <button class="cart-btn"><i class='bx bx-cart'></i> Add to Cart</button>
                     <div class="rating">
                         <i class='bx bx-star'></i>
@@ -302,20 +307,30 @@
                 <h4>gaminggalaxy@gmail.com</h4>
                 <h4>+639 1720 900</h4>
                 <h4>Sogod, Southern Leyte Philippines</h4>
+                <div>
+                    <i class='bx bxl-facebook-square'></i>
+                    <i class='bx bxl-linkedin-square'></i>
+                    <i class='bx bxl-twitter'></i>
+                    <i class='bx bxl-instagram-alt'></i>
+                </div>
             </li>
             <li>
                 <h3>About</h3>
                 <p>lorem2</p>
             </li>
             <li>
-                <h3>Get the app</h3><span><i class='bx bxl-apple'></i></span>
-                <span><i class='bx bxl-android'></i></span>
+                <h3>Get the app</h3>
+                <div>
+                    <img src="./assets/45px Blue.png" alt="Apple Store">
+                    <img src="./assets/Google_Play_Store.png" alt="Google Play Store">
+                </div>
             </li>
 
         </ul>
 
 
     </footer>
+    <script src="./script.js"></script>
 </body>
 
 </html>
