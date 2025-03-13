@@ -193,6 +193,7 @@ main {
         width: 90px;
     }
     th.quantity {
+        text-align: center;
         width: 155px;
     }
     th.total-price {
