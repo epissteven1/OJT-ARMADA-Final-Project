@@ -19,7 +19,7 @@ function handleCreateAccount(event) {
     localStorage.setItem(`${email}_name`, name); 
 
     alert("Account created successfully!");
-    window.location.href = "login.html"; 
+    window.location.href = "../Login/login.html"; 
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -27,4 +27,5 @@ document.addEventListener("DOMContentLoaded", function() {
     if (form) {
         form.addEventListener('submit', handleCreateAccount);
     }
+
 });
