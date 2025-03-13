@@ -130,10 +130,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const decreaseBtn = document.getElementById("decrease");
     const quantityValue = document.getElementById("quantity");
 
-    let cartCount = 0; // Default cart count
-    let currentQuantity = 1; // Default quantity selector value
+    let cartCount = 0;
+    let currentQuantity = 1;
 
-    // Update quantity when clicking + or -
+
     increaseBtn.addEventListener("click", function () {
         currentQuantity++;
         quantityValue.textContent = currentQuantity;
@@ -146,12 +146,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Add to cart button
-    cartButton.addEventListener("click", function () {
-        cartCount += currentQuantity; // Add selected quantity to cart count
-        cartCountElement.textContent = cartCount; // Update cart notification
 
-        // Show the cart count only if it's greater than 0
+    cartButton.addEventListener("click", function () {
+        cartCount += currentQuantity;
+        cartCountElement.textContent = cartCount;
+
+
         if (cartCount > 0) {
             cartCountElement.style.display = "flex";
         }
