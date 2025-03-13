@@ -9,7 +9,7 @@ function handleLogin(event) {
 
     if (storedPassword) {
         if (password === storedPassword) {
-            window.location.href = "dashboard.html"; 
+            window.location.href = "../Dashboard.html"; 
         } else {
             alert("Invalid email or password.");
         }

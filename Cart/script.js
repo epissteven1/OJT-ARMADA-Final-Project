@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
             modal.hide();
 
             // Redirect to receipt page
-            window.location.href = "Payment%20Receipt/receipt.html";
+            window.location.href = "../Payment%20Receipt/receipt.html";
         }
     });
 
