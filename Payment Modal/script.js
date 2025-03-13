@@ -5,7 +5,6 @@ form.addEventListener("submit", function (event) {
 
     let isValid = validateCardName() & validateCardNumber() & validateExpiration() & validateCVC();
 
-    // If all fields are valid, simulate payment processing
     if (isValid) {
         alert("Payment Successful!");
         form.reset();
@@ -14,10 +13,12 @@ form.addEventListener("submit", function (event) {
         let modal = bootstrap.Modal.getInstance(document.getElementById("paymentModal"));
         modal.hide();
 
-        // Redirect to the receipt page (change 'receipt.html' to your actual page)
+        // ✅ Clear the cart
+        localStorage.removeItem("cart");
+        updateCartCount(); // Update cart icon
 
+        // ✅ Redirect to receipt page (ensure correct path)
         window.location.href = "Payment%20Receipt/receipt.html";
-
     }
 });
 
@@ -71,4 +72,22 @@ document.getElementById("cardNumber").addEventListener("input", function (event)
     input = input.replace(/(.{4})/g, '$1 ').trim(); // Add space after every 4 digits
     event.target.value = input;
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const payButton = document.getElementById("pay-button");
+
+    if (payButton) {
+        payButton.addEventListener("click", function () {
+            // Clear the cart from localStorage
+            localStorage.removeItem("cart");
+
+            // Update the cart icon count
+            updateCartCount();
+
+            // Show success message (optional)
+            alert("Payment successful! Your cart has been cleared.");
+        });
+    }
+});
+
 

@@ -91,13 +91,16 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         } else if (event.target.closest(".remove")) {
             const index = event.target.dataset.index;
-            cart.splice(index, 1);
+            cart.splice(index, 1); // Remove from the cart array
+            localStorage.setItem("cart", JSON.stringify(cart)); // Update localStorage
         } else if (event.target.closest(".wishlist")) {
             const index = event.target.dataset.index;
             cart[index].wishlisted = !cart[index].wishlisted;
         }
+
         updateCartDisplay();
     });
+
 
     // Validate shipping information before allowing checkout
     function isShippingInfoComplete() {
@@ -108,10 +111,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isShippingInfoComplete()) {
             // Get the total amount from the cart page
             const totalAmount = totalAmountElement.textContent;
-    
+
             // Find and update the total amount inside the payment modal
             document.querySelector("#paymentModal .all-total-price").textContent = totalAmount;
-    
+
             // Show the payment modal
             let paymentModal = new bootstrap.Modal(document.getElementById("paymentModal"));
             paymentModal.show();

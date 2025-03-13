@@ -87,9 +87,14 @@ const products = {
 
 function updateCartCount() {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
-    document.getElementById("cart-count").textContent = totalQuantity;
+    let uniqueItemCount = cart.length; // Count only unique items
+    const cartCountElement = document.getElementById("cart-count");
+
+    if (cartCountElement) {
+        cartCountElement.textContent = uniqueItemCount; // Ensure it updates correctly
+    }
 }
+
 // Function to get the product name from sessionStorage
 function getSelectedProduct() {
     return sessionStorage.getItem("selectedProduct");
@@ -124,15 +129,20 @@ function addToCart(productName, quantity = 1) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let existingItem = cart.find(item => item.name === productName);
 
-    if (existingItem) {
-        existingItem.quantity += quantity; // Update quantity properly
+    if (!existingItem) {
+        cart.push({ name: productName, price: product.price, image: product.image, quantity });
     } else {
-        cart.push({ name: productName, price: product.price, image: product.image, quantity: quantity });
+        existingItem.quantity += quantity; // Increase quantity but don't change unique count
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartCount();  // Update cart count display
-    animateAddToCart(product.image);  // Animate image to cart
+    updateCartCount(); // Ensure unique count updates correctly
+    animateAddToCart(product.image);
+}
+
+function orderNow(productName) {
+    addToCart(productName, 1); // Ensure the quantity is updated in cart
+    window.location.href = "../Cart/Cart.html"; // Redirect to cart
 }
 
 /**
