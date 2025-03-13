@@ -1,3 +1,7 @@
+function selectProduct(productName) {
+    sessionStorage.setItem("selectedProduct", productName);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     // ✅ Handle Product Video Hover
     let productContainer = document.querySelector(".product-container");

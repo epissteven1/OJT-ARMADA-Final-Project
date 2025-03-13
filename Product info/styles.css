@@ -1,13 +1,14 @@
 * {
     padding: 0;
     margin: 0;
-    border: 1px solid red;  
 }
+
 main {
     display: flex;
     flex-direction: column;
-    flex:1;
+    flex: 1;
 }
+
 body {
     font-family: "Poppins", sans-serif;
     width: 100%;
@@ -16,6 +17,7 @@ body {
     flex-direction: column;
 
 }
+
 header {
     display: flex;
     justify-content: space-between;
@@ -42,7 +44,25 @@ header {
     color: #f7f1f1;
     margin-left: auto;
     margin-right: 200px;
+    position: relative;
 
+}
+
+#cart-icon {
+    position: relative;
+}
+
+#cart-count {
+    display: none;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 14px;
+    position: absolute;
+    top: -18px;
+    left: 5px;
+    font-weight: bold;
 }
 
 header .logo {
@@ -197,7 +217,7 @@ main {
     margin-top: 100px;
     width: 75%;
     max-width: 1150px;
-   
+
 }
 
 .product-container {
@@ -206,11 +226,11 @@ main {
     justify-content: center;
     max-width: 540px;
     width: 100%;
-    
+
 
     img {
-        width: 100%;
-        height: auto;
+        width: 70%;
+        height: 90%;
         border-radius: 20px;
     }
 }
@@ -224,27 +244,30 @@ main {
         font-family: "Open Sans", sans-serif;
         width: 80%;
         font-size: 2rem;
-        font-weight:700;
+        font-weight: 700;
     }
+
     .price {
-        font-size: 2rem; 
+        font-size: 2rem;
         font-weight: 600;
     }
+
     .details {
-        font-family: "Open Sans", sans-serif; 
+        font-family: "Open Sans", sans-serif;
         margin-top: 35px;
         width: 100%;
         font-size: 1rem;
         font-weight: 400;
         color: #626264;
     }
-}   
+}
 
 .rating-info {
     margin-top: 10px;
     display: flex;
     gap: 10px;
     align-items: center;
+
     .star-svg {
         max-width: 20px;
         width: 100%;
@@ -252,11 +275,12 @@ main {
         height: auto;
         color: #777E90;
     }
+
     p {
-        font-family: "Open Sans", sans-serif; 
+        font-family: "Open Sans", sans-serif;
         font-size: 1rem;
         font-weight: 400;
-        gap:5px;
+        gap: 5px;
         color: #626264;
     }
 
@@ -301,13 +325,14 @@ main {
     display: flex;
     margin-top: 35px;
     gap: 10px;
+
     .order-btn {
         max-width: 242px;
         width: 100%;
         padding: 10px 0;
         border-radius: 20px;
         background-color: #141416;
-        color:white;
+        color: white;
         font-size: 14px;
         border: none;
         cursor: pointer;
@@ -326,6 +351,7 @@ main {
         border: 1px solid #D9DADB;
         cursor: pointer;
     }
+
     i {
         display: flex;
         align-items: center;
@@ -363,6 +389,7 @@ main {
         font-weight: 600;
         text-align: left;
     }
+
     p {
         padding: 0 10px;
         text-align: left;
@@ -383,9 +410,10 @@ main {
     border: solid 1px #B1B5C3;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .product-card:hover {
-    transform: scale(1.05); 
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); 
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .product-card img {
@@ -420,12 +448,12 @@ main {
         width: 50px;
         height: 50px;
     }
-    
+
     .rating {
         font-size: 14px;
         color: #666;
     }
-    
+
     .cart-btn i {
         width: 100%;
         height: auto;
@@ -464,9 +492,3 @@ footer {
         margin: 5px;
     }
 }
-
-
-
-
-
- 
