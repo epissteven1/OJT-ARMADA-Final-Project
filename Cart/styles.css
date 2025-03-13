@@ -141,13 +141,15 @@ li input {
 main {
     display: flex;
     justify-content: center;
+    min-height: 500px;
+    gap: 50px;
 }
 
 .cart-container {
     margin-top: 20px;
     max-width: 800px;
     width: 100%;
-    height: auto;
+    height: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -311,11 +313,6 @@ td.actions {
     outline: none;
 }
 
-/* .promo-section {
-    display: none; 
-} */
-
-/* Message styling */
 .promo-message {
     font-size: 14px;
     color: #555;
@@ -323,7 +320,7 @@ td.actions {
     width: 100%;
 }
 
-/* Discount styling */
+
 .summary-details {
     display: flex;
     align-items: center;
@@ -357,14 +354,68 @@ td.actions {
     span {
         font-weight: 700;
     }
-    
-    button {
-        width: 128px;
-        height: 40px;
-        border-radius: 20px;
-        background-color: #141416;
-        color: white;
-        cursor: pointer;
+}
+
+.lower-content {
+    margin-top: 30px;
+    width: 400px;
+    background: #F5F5F5;
+    padding: 20px;
+    border-radius: 10px;
+    height: 420px;
+
+    h1 {
+        font-size: 20px;
     }
 }
 
+.shipping-form input {
+    border-bottom: 10px;
+    width: 94.5%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.name-fields, .location-fields {
+    display: flex;
+    gap: 10px;
+}
+
+.name-fields input, .location-fields input {
+    flex: 1;
+}
+
+.order-summary {
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    h2 {
+        padding: 5px 0;
+        font-size: 20px;
+        border-top: 40px;
+    }
+    
+}
+
+.order-summary p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total {
+    padding: 15px 0;
+    font-weight: bold;
+    color: #141416;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 10px;
+    background: #141416;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
