@@ -310,6 +310,11 @@ td.actions {
     text-align: left;
     outline: none;
 }
+
+/* .promo-section {
+    display: none; 
+} */
+
 /* Message styling */
 .promo-message {
     font-size: 14px;
