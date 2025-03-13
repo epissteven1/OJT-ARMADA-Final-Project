@@ -1,16 +1,26 @@
 function handleLogin(event) {
     event.preventDefault(); 
-    
+
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
 
-    console.log("Email:", email); 
-    console.log("Password:", password);
+    // Retrieve the stored password directly from local storage
+    let storedPassword = localStorage.getItem(email);
 
-    if (email === "userexample@gmail.com" && password === "12345678") {
-        localStorage.setItem('isLoggedIn', 'true');
-        window.location.href = "dashboard.html"; 
+    if (storedPassword) {
+        if (password === storedPassword) {
+            window.location.href = "dashboard.html"; 
+        } else {
+            alert("Invalid email or password.");
+        }
     } else {
         alert("Invalid email or password.");
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    let loginForm = document.querySelector('form'); 
+    if (loginForm) {
+        loginForm.addEventListener('submit', handleLogin);
+    }
+});
