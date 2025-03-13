@@ -15,7 +15,9 @@ form.addEventListener("submit", function (event) {
         modal.hide();
 
         // Redirect to the receipt page (change 'receipt.html' to your actual page)
-        window.location.href = "../Payment%20Receipt/receipt.html";
+
+        window.location.href = "Payment%20Receipt/receipt.html";
+
     }
 });
 
