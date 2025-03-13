@@ -1,5 +1,5 @@
 function handleLogin(event) {
-    event.preventDefault(); 
+    event.preventDefault();
 
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
@@ -9,7 +9,7 @@ function handleLogin(event) {
 
     if (storedPassword) {
         if (password === storedPassword) {
-            window.location.href = "dashboard.html"; 
+            window.location.href = "../Dashboard/Dashboard.html";
         } else {
             alert("Invalid email or password.");
         }
@@ -18,8 +18,8 @@ function handleLogin(event) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    let loginForm = document.querySelector('form'); 
+document.addEventListener("DOMContentLoaded", function () {
+    let loginForm = document.querySelector('form');
     if (loginForm) {
         loginForm.addEventListener('submit', handleLogin);
     }

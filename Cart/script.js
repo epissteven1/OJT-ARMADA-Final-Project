@@ -6,9 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const promoCodeInput = document.querySelector("#promo-code");
     const promoMessage = document.querySelector(".promo-message");
     const discountElement = document.querySelector(".promo-section span");
-    const checkoutBtn = document.querySelector(".checkout-btn"); // Checkout button
-    const shippingInputs = document.querySelectorAll(".shipping-form input");
-
+    const checkoutBtn = document.querySelector(".checkout-btn");
+    const modalContent = document.querySelector("#modalContent");
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let discountAmount = 0;
     const shippingFee = 5;
@@ -66,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         discountElement.textContent = `₱${discountAmount.toLocaleString()}`;
-
         let finalTotal = totalCartPrice - discountAmount + shippingFee;
         allTotalPriceElement.textContent = `₱${(totalCartPrice - discountAmount).toLocaleString()}`;
         totalAmountElement.textContent = `₱${finalTotal.toLocaleString()}`;
@@ -94,24 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         updateCartDisplay();
     });
-
-    // ✅ Validate shipping information before allowing checkout
-    function isShippingInfoComplete() {
-        return [...shippingInputs].every(input => input.value.trim() !== "");
-    }
-
-    checkoutBtn.addEventListener("click", () => {
-        if (isShippingInfoComplete()) {
-            window.location.href = "../Payment Modal/payment.html"; // Redirect to payment page
-        } else {
-            alert("Please complete all shipping information before proceeding to checkout.");
-        }
-    });
-
-    // ✅ Check input changes to enable/disable checkout button
-    shippingInputs.forEach(input => {
-        input.addEventListener("input", () => {
-            checkoutBtn.disabled = !isShippingInfoComplete();
-        });
-    });
 });
+
+
+

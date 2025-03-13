@@ -71,4 +71,7 @@ document.getElementById("cardNumber").addEventListener("input", function (event)
     input = input.replace(/(.{4})/g, '$1 ').trim(); // Add space after every 4 digits
     event.target.value = input;
 });
-
+document.addEventListener("DOMContentLoaded", () => {
+    const paymentModal = new bootstrap.Modal(document.getElementById("paymentModal"));
+    paymentModal.show(); // ✅ Auto-open the modal on page load
+});
