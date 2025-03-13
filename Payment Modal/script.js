@@ -9,10 +9,16 @@ form.addEventListener("submit", function (event) {
     if (isValid) {
         alert("Payment Successful!");
         form.reset();
+
+        // Hide the modal
         let modal = bootstrap.Modal.getInstance(document.getElementById("paymentModal"));
         modal.hide();
+
+        // Redirect to the receipt page (change 'receipt.html' to your actual page)
+        window.location.href = "../Payment%20Receipt/receipt.html";
     }
 });
+
 
 // Function to trigger payment modal from Cart section
 function checkAndShowPaymentModal() {
