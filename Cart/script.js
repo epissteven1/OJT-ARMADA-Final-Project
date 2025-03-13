@@ -1,30 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
     const cartCount = document.querySelector(".cart-count");
     const cartTable = document.querySelector(".cart-table tbody");
-    const totalPriceElement = document.querySelector(".summary-details .total-price");
-    
+    const allTotalPriceElement = document.querySelector(".all-total-price");
+    const promoCodeInput = document.querySelector("#promo-code");
+    const promoMessage = document.querySelector(".promo-message");
+    const discountElement = document.querySelector(".promo-section span");
+
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let discountAmount = 0;
+
     updateCartDisplay();
 
     function updateCartDisplay() {
         cartTable.innerHTML = "";
         let totalCartPrice = 0;
         cartCount.textContent = cart.length;
-        
+
         cart.forEach((item, index) => {
             const row = document.createElement("tr");
             row.classList.add("cart-item");
-            
+
             let totalItemPrice = item.price * item.quantity;
             totalCartPrice += totalItemPrice;
-            
+
             row.innerHTML = `
                 <td class="item-info">
                     <img src="${item.image}" alt="${item.name}">
-                    <div>
-                        <strong>${item.name}</strong>
-                        <p>${item.description}</p>
-                    </div>
+                    <div><strong>${item.name}</strong></div>
                 </td>
                 <td>₱${item.price.toLocaleString()}</td>
                 <td>
@@ -34,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <button class="increase" data-index="${index}">+</button>
                     </div>
                 </td>
-                <td>₱${totalItemPrice.toLocaleString()}</td>
+                <td class="item-total">₱${totalItemPrice.toLocaleString()}</td>
                 <td class="actions">
                     <button class="wishlist" data-index="${index}">
                         <i class="fa-solid fa-heart ${item.wishlisted ? 'wishlisted' : ''}"></i>
@@ -46,9 +48,26 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
             cartTable.appendChild(row);
         });
-        totalPriceElement.textContent = `₱${totalCartPrice.toLocaleString()}`;
-        localStorage.setItem("cart", JSON.stringify(cart));
+
+        applyPromoCode(totalCartPrice);
     }
+
+    function applyPromoCode(totalCartPrice) {
+        if (promoCodeInput.value.trim().toUpperCase() === "HAPPY") {
+            discountAmount = totalCartPrice * 0.1;
+            promoMessage.style.display = "block";
+        } else {
+            discountAmount = 0;
+            promoMessage.style.display = "none";
+        }
+
+        discountElement.textContent = `₱${discountAmount.toLocaleString()}`;
+        allTotalPriceElement.textContent = `₱${(totalCartPrice - discountAmount).toLocaleString()}`;
+    }
+
+    promoCodeInput.addEventListener("input", () => {
+        updateCartDisplay();
+    });
 
     cartTable.addEventListener("click", (event) => {
         if (event.target.closest(".increase")) {
