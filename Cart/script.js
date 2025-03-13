@@ -6,8 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const promoCodeInput = document.querySelector("#promo-code");
     const promoMessage = document.querySelector(".promo-message");
     const discountElement = document.querySelector(".promo-section span");
-    const checkoutBtn = document.querySelector(".checkout-btn"); // Checkout button
+    const checkoutBtn = document.querySelector(".checkout-btn");
     const shippingInputs = document.querySelectorAll(".shipping-form input");
+
+    const form = document.getElementById("paymentForm");
+    const paymentModalElement = document.getElementById("paymentModal");
+    let paymentModal = new bootstrap.Modal(paymentModalElement);
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let discountAmount = 0;
@@ -95,23 +99,93 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCartDisplay();
     });
 
-    // ✅ Validate shipping information before allowing checkout
+    // Validate shipping information before allowing checkout
     function isShippingInfoComplete() {
         return [...shippingInputs].every(input => input.value.trim() !== "");
     }
 
     checkoutBtn.addEventListener("click", () => {
         if (isShippingInfoComplete()) {
-            window.location.href = "../Payment Modal/payment.html"; // Redirect to payment page
+            // Get the total amount from the cart page
+            const totalAmount = totalAmountElement.textContent;
+    
+            // Find and update the total amount inside the payment modal
+            document.querySelector("#paymentModal .all-total-price").textContent = totalAmount;
+    
+            // Show the payment modal
+            let paymentModal = new bootstrap.Modal(document.getElementById("paymentModal"));
+            paymentModal.show();
         } else {
             alert("Please complete all shipping information before proceeding to checkout.");
         }
     });
 
-    // ✅ Check input changes to enable/disable checkout button
     shippingInputs.forEach(input => {
         input.addEventListener("input", () => {
             checkoutBtn.disabled = !isShippingInfoComplete();
         });
+    });
+
+    // Payment Modal Handling
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let isValid = validateCardName() & validateCardNumber() & validateExpiration() & validateCVC();
+
+        if (isValid) {
+            alert("Payment Successful!");
+            form.reset();
+
+            // Hide the modal
+            let modal = bootstrap.Modal.getInstance(paymentModalElement);
+            modal.hide();
+
+            // Redirect to receipt page
+            window.location.href = "Payment%20Receipt/receipt.html";
+        }
+    });
+
+    // Auto-show payment modal if coming from checkout page
+    function checkAndShowPaymentModal() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has("checkout")) {
+            paymentModal.show();
+        }
+    }
+    checkAndShowPaymentModal();
+
+    // Payment Form Validations
+    function validateCardName() {
+        let cardName = document.getElementById("cardName").value.trim();
+        return toggleError("nameError", cardName !== "");
+    }
+
+    function validateCardNumber() {
+        let cardNumber = document.getElementById("cardNumber").value.replace(/\s+/g, '');
+        let cardRegex = /^\d{16}$/;
+        return toggleError("cardError", cardRegex.test(cardNumber));
+    }
+
+    function validateExpiration() {
+        let expiration = document.getElementById("expiration").value;
+        let expRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
+        return toggleError("expError", expRegex.test(expiration));
+    }
+
+    function validateCVC() {
+        let cvc = document.getElementById("cvc").value;
+        let cvcRegex = /^\d{3}$/;
+        return toggleError("cvcError", cvcRegex.test(cvc));
+    }
+
+    function toggleError(errorId, isValid) {
+        document.getElementById(errorId).classList.toggle("d-none", isValid);
+        return isValid;
+    }
+
+    document.getElementById("cardNumber").addEventListener("input", function (event) {
+        let input = event.target.value.replace(/\D/g, '');
+        input = input.replace(/(.{4})/g, '$1 ').trim();
+        event.target.value = input;
     });
 });
