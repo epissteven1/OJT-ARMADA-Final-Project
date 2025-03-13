@@ -126,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cartButton = document.getElementById("cart-button");
     const cartCountElement = document.getElementById("cart-count");
     const cartIcon = document.getElementById("cart-icon");
+    const orderButton = document.getElementById("order-button");
     const increaseBtn = document.getElementById("increase");
     const decreaseBtn = document.getElementById("decrease");
     const quantityValue = document.getElementById("quantity");
@@ -156,4 +157,10 @@ document.addEventListener("DOMContentLoaded", function () {
             cartCountElement.style.display = "flex";
         }
     });
+    
+    // Redirect to cart.html when Order Now button is clicked
+    orderButton.addEventListener("click", function () {
+        window.location.href = "../Cart/Cart.html"; // Redirect to cart.html
+    });
+
 });

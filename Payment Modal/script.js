@@ -15,9 +15,12 @@ form.addEventListener("submit", function (event) {
         modal.hide();
 
         // Redirect to the receipt page (change 'receipt.html' to your actual page)
+
         window.location.href = "Payment%20Receipt/receipt.html";
+
     }
 });
+
 
 // Function to trigger payment modal from Cart section
 function checkAndShowPaymentModal() {

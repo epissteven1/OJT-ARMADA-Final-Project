@@ -165,26 +165,15 @@ main {
     width: 100%;
     gap: 15px;
 
-    button.track-order {
+    button.continue-shopping {
+        width: 195px;
         height: 48px;
-        width: 166px;
         border-radius: 90px;
         background-color: black;
         color: white;
         font-size: 14px;
         font-weight: 600;
-
-    }
-
-    button.continue-shopping {
-        width: 195px;
-        height: 48px;
-        border-radius: 90px;
-        border: 3px solid #E6E8EC;
-        background-color: white;
-        color: #23262F;
-        font-size: 14px;
-        font-weight: 600;
+        cursor: pointer;
     }
 }
 
