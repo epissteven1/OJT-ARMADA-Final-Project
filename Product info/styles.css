@@ -59,7 +59,10 @@ header {
     left: 3px;
     font-weight: bold;
 }
-
+.nav-menu a {
+    text-decoration: none;
+    color: inherit;
+}
 a #cart-icon {
     position: relative;
 
