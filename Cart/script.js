@@ -38,9 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 </td>
                 <td class="item-total">₱${totalItemPrice.toLocaleString()}</td>
                 <td class="actions">
-                    <button class="wishlist" data-index="${index}">
-                        <i class="fa-solid fa-heart ${item.wishlisted ? 'wishlisted' : ''}"></i>
-                    </button>
                     <button class="remove" data-index="${index}">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
